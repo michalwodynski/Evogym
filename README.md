@@ -1,54 +1,90 @@
-# React + TypeScript + Vite
+# Gym Website - React TypeScript Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Opis Projektu
 
-Currently, two official plugins are available:
+Nowoczesna, responsywna strona internetowa dla siłowni zbudowana w React z TypeScript. Aplikacja prezentuje kompletną ofertę klubu fitness z intuicyjną nawigacją, dynamicznym przewijaniem i mobilnym menu hamburgerowym. Projekt został zaprojektowany z naciskiem na user experience i nowoczesną estetykę.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Technologie
 
-## Expanding the ESLint configuration
+- **React 18** - biblioteka do budowania interfejsu użytkownika
+- **TypeScript** - typowane rozszerzenie JavaScript dla lepszej jakości kodu
+- **Tailwind CSS** - framework CSS do szybkiego stylowania
+- **Vite** - szybkie narzędzie do budowania aplikacji
+- **Heroicons** - ikony SVG dla React
+- **React Hooks** - zarządzanie stanem i efektami ubocznymi
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🎯 Funkcjonalności
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### ✨ Główne Cechy
+- **Responsywna nawigacja** z dynamicznym tłem przy przewijaniu
+- **Menu mobilne** typu hamburger dla urządzeń o mniejszych ekranach
+- **Smooth scrolling** między sekcjami strony
+- **Zarządzanie stanem** aktywnej sekcji i pozycji przewijania
+- **Custom hook** dla media queries (`useMediaQuery`)
+
+### 📱 Sekcje Strony
+- **Home** - strona główna z hero section
+- **Benefits** - korzyści z członkostwa w siłowni
+- **Our Classes** - oferta zajęć grupowych
+- **Contact Us** - formularz kontaktowy
+- **Footer** - stopka z dodatkowymi informacjami
+
+## 🏗️ Architektura
+
+```
+src/
+├── App.tsx                 # Główny komponent aplikacji
+├── main.tsx               # Punkt wejścia aplikacji
+├── index.css              # Globalne style
+├── assets/                # Grafiki i logo
+├── Hooks/
+│   └── useMediaQuery.ts   # Custom hook dla media queries
+├── scenes/                # Komponenty sekcji
+│   ├── navbar/           # Nawigacja główna
+│   ├── home/             # Sekcja główna
+│   ├── benefits/         # Sekcja korzyści
+│   ├── ourClasses/       # Sekcja zajęć
+│   ├── contactUs/        # Formularz kontaktowy
+│   └── footer/           # Stopka
+└── shared/               # Komponenty współdzielone
+    ├── ActionButton.tsx  # Przycisk CTA
+    ├── HText.tsx         # Stylowane nagłówki
+    └── types.ts          # Definicje typów TypeScript
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔧 Kluczowe Implementacje
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Dynamiczna Nawigacja
+- Automatyczna zmiana tła nawigacji przy przewijaniu
+- Podświetlanie aktywnej sekcji
+- Powrót do sekcji Home przy przewijaniu na górę
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Responsywność
+- Adaptacyjne menu dla różnych rozmiarów ekranów
+- Custom hook `useMediaQuery` do zarządzania breakpointami
+- Mobile-first approach
+
+### TypeScript Integration
+- Pełne typowanie komponentów i props
+- Enum dla zarządzania sekcjami strony
+- Type safety dla wszystkich funkcji
+
+## 🎨 UI/UX Features
+
+- **Minimalistyczny design** zgodny z nowoczesnymi trendami
+- **Płynne animacje** i przejścia
+- **Intuicyjna nawigacja** z visual feedback
+- **Accessible design** z odpowiednimi kontrastami
+
+## 🚀 Uruchomienie
+
+```bash
+# Instalacja zależności
+npm install
+
+# Uruchomienie w trybie deweloperskim
+npm run dev
+
+# Budowanie produkcyjne
+npm run build
 ```
