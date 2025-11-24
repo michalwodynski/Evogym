@@ -88,3 +88,7 @@ npm run dev
 # Budowanie produkcyjne
 npm run build
 ```
+## Kontekst Projektu
+
+Projekt został stworzony na podstawie tutorialu "Build a Complete Typescript React Fitness Application for Beginners | Responsive" dostępnego na kanale **EdRoh**.
+
